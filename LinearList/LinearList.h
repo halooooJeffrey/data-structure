@@ -1,4 +1,3 @@
-enum bool {false, true};
 template <class T>
 class LinearList{
 public:

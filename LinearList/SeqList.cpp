@@ -13,6 +13,7 @@ SeqList<T>::SeqList(int sz){
 		}
 	}
 }
+template <class T>
 SeqList<T>::SeqList(SeqList<T> &L){
 	maxSize = L.Size();
 	last = L.Length() - 1;
@@ -27,6 +28,7 @@ SeqList<T>::SeqList(SeqList<T> &L){
 		data[i - 1] = value;
 	}
 }
+template <class T>
 void SeqList<T>::reSize(int newSize){
 	if (newSize <= 0){
 		cerr << "无效的数据大小!" << endl;
@@ -48,6 +50,7 @@ void SeqList<T>::reSize(int newSize){
 		maxSize = newSize;
 	}
 }
+template <class T>
 int SeqList<T>::search(T &x) const{
 	for (int i = 0; i <= last; i++){
 		if (data[i] == x)
@@ -55,12 +58,14 @@ int SeqList<T>::search(T &x) const{
 	}
 	return 0;
 }
+template <class T>
 int SeqList<T>::Locate(int i) const{
 	if (i >= 1 && i <= last + 1)
 		return i;
 	else
 		return 0;
 }
+template <class T>
 bool SeqList<T>::Insert(int i, T &x){
 	if (last == maxSize - 1)
 		return false;
@@ -72,6 +77,7 @@ bool SeqList<T>::Insert(int i, T &x){
 	last++;
 	return true;
 }
+template <class T>
 bool SeqList<T>::Remove(int i, T &x){
 	if (last == -1)
 		return false;
@@ -83,6 +89,7 @@ bool SeqList<T>::Remove(int i, T &x){
 	last--;
 	return true;
 }
+template <class T>
 void SeqList<T>::input(){
 	cout << "开始建立顺序表，请输入表中元素个数: ";
 	while(1){
@@ -96,11 +103,13 @@ void SeqList<T>::input(){
 		cout << i + 1 << endl;
 	}
 }
+template <class T>
 void SeqList<T>::output(){
 	cout << "顺序表当前元素最后位置为: " << last << endl;
 	for (int i = 0; i <= last; i++)
 		cout << "#" << i + 1 << ":" << data[i] << endl;
 }
+template <class T>
 SeqList<T> SeqList<T>::opertaor =(SeqList<T> &L){
 	SeqList<T> temp;
 	maxSize = L.Size();
